@@ -1,14 +1,13 @@
-const categoriesList = document.querySelector('#categories');
+const categoriesListRef = document.querySelector('#categories');
 
 function countCategories(list) {
-    return `Number of categories: ${[...list.children].length}`
-}
-console.log(countCategories(categoriesList));
+    return `Number of categories: ${list.children.length}`
+};
+console.log(countCategories(categoriesListRef));
 
 function getCategoryHeading(list) {
-      for (const category of [...list.children]) {
-          console.log(`Category: ${category.firstElementChild.textContent}`);
-          console.log(`Elements: ${category.lastElementChild.children.length}`);
+    for (const category of list.children) {
+        console.log(`Category: ${category.firstElementChild.textContent} \nElements: ${category.lastElementChild.children.length}`);
     }
-}
-getCategoryHeading(categoriesList)
+};
+getCategoryHeading(categoriesListRef);

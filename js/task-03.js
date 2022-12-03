@@ -15,8 +15,14 @@ const images = [
 
 const galleryRef = document.querySelector('.gallery');
 
-const makeGalleryMarkup = images.map(({ url, alt }) => {
+// const makeGalleryMarkup = images.map(({ url, alt }) => {
+//     return `<li class="gallery__item"><img class="gallery__image" src="${url}" alt="${alt}"></li>`
+// }).join('');  
+
+function makeGalleryMarkup(images) {
+  return images.map(({ url, alt }) => {
     return `<li class="gallery__item"><img class="gallery__image" src="${url}" alt="${alt}"></li>`
 }).join('');
+};
   
-galleryRef.insertAdjacentHTML('afterbegin', makeGalleryMarkup)
+galleryRef.insertAdjacentHTML('afterbegin', makeGalleryMarkup(images));

@@ -27,12 +27,14 @@ button {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 15px;
+  row-gap: 10px;
+
+  margin: 0 -10px;
 }
 
 .gallery__item {
   list-style: none;
-  width: 250px;
+  flex-basis: 40%;
   margin: 0 auto;
 }
 
