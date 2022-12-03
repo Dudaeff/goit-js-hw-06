@@ -9,8 +9,8 @@ const refs = {
 };
 
 refs.changeColorBtn.addEventListener('click', () => {
-  document.body.style.backgroundColor = getRandomHexColor();
-  refs.colorTextName.textContent = getRandomHexColor();
-
-  // refs.changeColorBtn.style.backgroundColor = getRandomHexColor(); //<-- якщо розкоментувати то кнопка теж буде змінювати колір =)  
+  const randomColor = getRandomHexColor();
+  document.body.style.backgroundColor = randomColor;
+  refs.colorTextName.textContent = randomColor;
+  refs.changeColorBtn.style.backgroundColor = randomColor; 
 });

@@ -10,13 +10,13 @@ const ingredients = [
 const ingredientsList = document.querySelector('#ingredients');
 
 function makeListItemMarkup(ingredients) {
-  for (const ingredient of ingredients) {
+  return ingredients.map(ingredient => {
     const listItem = document.createElement('li');
     listItem.classList.add('item');
     listItem.textContent = ingredient;
-    
-    ingredientsList.append(listItem);
-  }
+  
+    return listItem;
+  })
 };
-
-makeListItemMarkup(ingredients);
+ 
+ingredientsList.append(...makeListItemMarkup(ingredients));

@@ -19,15 +19,18 @@ refs.createBtn.addEventListener('click', () => {
 });
 
 function createBoxes(amount) {
+  const arrayNewBoxes = [];
   for (let i = 0, j = 30; i < amount; i += 1, j += 10) {
-    const newBoxes = document.createElement('div');
-    newBoxes.style.width = `${j}px`;
-    newBoxes.style.height = `${j}px`;
-    newBoxes.style.backgroundColor = getRandomHexColor();
+    const newBox = document.createElement('div');
+    newBox.style.width = `${j}px`;
+    newBox.style.height = `${j}px`;
+    newBox.style.backgroundColor = getRandomHexColor();
 
-    refs.targetBox.append(newBoxes);
+    arrayNewBoxes.push(newBox);
   }
+  refs.targetBox.append(...arrayNewBoxes);
 };
+
 
 function destroyBoxes() {
   refs.targetBox.innerHTML = '';
