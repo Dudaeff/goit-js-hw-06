@@ -1,14 +1,13 @@
 const inputRef = document.querySelector('#validation-input');
 
-inputRef.addEventListener('input', makeValidation);
+inputRef.addEventListener('input', doValidate);
 
-function makeValidation() {
+function doValidate() {
     return inputRef.addEventListener('blur', () => {
         if (inputRef.dataset.length > inputRef.value.length) {
             inputRef.classList.add('invalid')
         } else {
-            inputRef.classList.remove('invalid')
-            inputRef.classList.add('valid')
+            inputRef.classList.replace('invalid','valid' )
         }
         return inputRef;
     });
